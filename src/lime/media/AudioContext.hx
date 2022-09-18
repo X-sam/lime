@@ -31,7 +31,7 @@ class AudioContext
 				try
 				{
 					untyped #if haxe4 js.Syntax.code #else __js__ #end ("window.AudioContext = window.AudioContext || window.webkitAudioContext;");
-					web = cast untyped #if haxe4 js.Syntax.code #else __js__ #end ("new window.AudioContext ()");
+					web = cast untyped #if haxe4 js.Syntax.code #else __js__ #end ("new window.AudioContext ({latencyHint: 'interactive',sampleRate:44100})");
 					this.type = WEB;
 				}
 				catch (e:Dynamic) {}
